@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add New Car</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="cardplaceholder">
+    <ion-row>
+      <ion-col size="3">
+          <img class="cardplaceholdercar1" *ngIf="imageselected" [src]="user_image" />
+          <img class="cardplaceholdercar" *ngIf="!imageselected" src="https://via.placeholder.com/200" />
+          
+        
+        </ion-col>
+      <ion-col size="9">
+          <br><br><br><br><br>
+          
+            <ion-button color="primary"><input class="inputfilemage" type="file" value="upload" accept=".jpg" (change)=fileUploader($event)></ion-button>
+            
+       
+        
+      </ion-col>
+    </ion-row>
+    
+  </ion-card>
+  <ion-item>
+    <ion-label position="floating">Enter Car Name</ion-label>
+    <ion-input type="text" [(ngModel)]="name" text-left id="input"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Enter Car Model</ion-label>
+    <ion-input type="text" [(ngModel)]="model" text-left id="input"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="floating">Vehicle Number</ion-label>
+      <ion-input type="text" [(ngModel)]="vehiclenumber" text-left id="input"></ion-input>
+    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Seating Capacity</ion-label>
+    <ion-input type="text" [(ngModel)]="capacity" text-left id="input"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Rent Per Day</ion-label>
+    <ion-input type="text" [(ngModel)]="rentcharge" text-left id="input"></ion-input>
+  </ion-item>
+  <br>
+  <br>
+  <ion-row>
+    <ion-col size="4">
+    </ion-col>
+    <ion-col size="4">
+        <ion-button (click) ="onSubmit()" expand="full" shape="round" fill="outline">Submit</ion-button>
+    </ion-col>
+    <ion-col size="4">
+    </ion-col>
+  </ion-row>
+</ion-content>

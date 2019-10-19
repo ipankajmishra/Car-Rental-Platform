@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Showing results for " {{ heading }} "</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item class="custom_item">
+        <ion-label style="color: blue; font-size: 15px" position="stacked">Search model, capacity, year, vehicle number...</ion-label>
+        <ion-input type="text" [(ngModel)]="searchQuery"></ion-input>
+      </ion-item>          <!--<ion-radio-group>
+        <ion-item>
+            <ion-label>By Name</ion-label>
+            <ion-radio slot="start" value="diff" checked></ion-radio>
+          </ion-item>
+    
+        <ion-item>
+          <ion-label>By Model</ion-label>
+          <ion-radio slot="start" value="biff"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>by Year</ion-label>
+          <ion-radio slot="start" value="griff"></ion-radio>
+        </ion-item>
+    
+        
+      </ion-radio-group>-->
+      <ion-row>
+          <ion-col size="4">
+          </ion-col>
+          <ion-col size="4">
+              <ion-button (click) ="searchagain()" expand="full" shape="round" fill="outline">Search</ion-button>
+          </ion-col>
+          <ion-col size="4">
+          </ion-col>
+        </ion-row>
+
+        <h3 *ngIf="noresult">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sorry no matching result found. Try to search with different word.</h3>
+    <ion-list>
+        <ion-card *ngFor="let item of items">
+         <!--<ion-thumbnail class="thumbnail" slot="start">
+          <img [src]="item.image">
+      </ion-thumbnail>-->
+      <ion-row>
+        <ion-col size="4">
+            <ion-img class="customsize" [src]="item.image"></ion-img>
+        </ion-col>
+        <ion-col size="4">
+            <h1 style="color: red">{{item.model}}</h1> 
+            <h4 style="color: rgb(85, 64, 80); font-weight: bolder">Rs. {{ item.rent_per_day }} /day<ion-chip style="background-color: green">
+                <p style="color: aliceblue">Offer Price</p>
+              </ion-chip></h4>
+        </ion-col>
+       <ion-col size="2">
+          <ion-chip (click)="viewdetails(item)" style="background-color: rgb(215, 197, 228)">
+              View More Details
+            </ion-chip>
+            <br>
+            <ion-chip style="background-color: rgb(78, 77, 78)">
+               <p style="color: antiquewhite">Book Now</p>
+             </ion-chip>
+             <br>
+             <!--<ion-chip (click)="delete(item.id)" style="background-color: rgb(156, 43, 43)">
+                 <p style="color: antiquewhite">Delete</p>
+               </ion-chip>-->
+       </ion-col>
+       <ion-col size="2">
+         <br>
+         <br>
+         <br>
+         <h2>{{ item.seating_capacity }} Seater</h2>
+       </ion-col>
+       
+      </ion-row>
+      
+         
+         
+        </ion-card>
+      </ion-list>
+</ion-content>

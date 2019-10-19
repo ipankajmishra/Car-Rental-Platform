@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Details: {{ modelname }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="background-color:#661666; border-radius: 25px">
+    <ion-card style="height: 150px; width: 250px; margin-left: 35%; border-radius: 35px; margin-bottom: 0%; ">
+      <img [src]="cardetails.image" />
+      
+    </ion-card>
+    <br>
+    
+  </ion-card>
+  <ion-card>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="customcard">
+         <h2 class="customheading2"> Car Model - <span class="entry"> {{ cardetails.model }} </span></h2>
+        </ion-card>
+      <ion-card class="customcard"> 
+          <h2 class="customheading2">Unique Number - <span class="entry"> {{ cardetails.uniqueNumber }} </span></h2>
+        </ion-card>
+      <ion-card class="customcard">
+          <h2 class="customheading2">Seating Capacity  - <span class="entry"> {{ cardetails.seating_capacity }} </span></h2>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+          <ion-card class="customcard">
+              <h2 class="customheading2">Vehicle Number - <span class="entry"> {{ cardetails.vehicle_number }} </span></h2>
+            </ion-card>
+            <ion-card class="customcard">
+                <h2 class="customheading2">Rent - Rs.<span class="entry"> {{ cardetails.rent_per_day }} </span> /day</h2>
+              </ion-card>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!editbool">
+        <ion-col size="4">
+        </ion-col>
+        <ion-col size="4">
+            <ion-button (click) ="edit()" expand="full" shape="round" fill="outline">Edit Details</ion-button>
+        </ion-col>
+        <ion-col size="4">
+        </ion-col>
+      </ion-row>
+  </ion-card>
+  <ion-card *ngIf="editbool">
+    <h1 style="font-size: 25px; margin-left: 40%">Edit Details</h1>
+      
+        <ion-item>
+          <ion-label position="floating">Enter Car Model</ion-label>
+          <ion-input type="text" [(ngModel)]="model" text-left id="input"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Enter Car Name</ion-label>
+            <ion-input type="text" [(ngModel)]="uniqueNumber" text-left id="input"></ion-input>
+          </ion-item>
+        <ion-item>
+            <ion-label position="floating">Vehicle Number</ion-label>
+            <ion-input type="text" [(ngModel)]="vehiclenumber" text-left id="input"></ion-input>
+          </ion-item>
+        <ion-item>
+          <ion-label position="floating">Seating Capacity</ion-label>
+          <ion-input type="text" [(ngModel)]="capacity" text-left id="input"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating">Rent Per Day</ion-label>
+          <ion-input type="text" [(ngModel)]="rentcharge" text-left id="input"></ion-input>
+        </ion-item>
+        <br>
+        <br>
+        <ion-row *ngIf="editbool">
+          <ion-col size="3">
+
+          </ion-col>
+            <ion-col size="3">
+                <ion-button (click) ="cancel()" expand="full" shape="round" fill="outline">Cancel</ion-button>
+            </ion-col>
+            <ion-col size="3">
+                <ion-button (click) ="update()" expand="full" shape="round" fill="outline">Update</ion-button>
+            </ion-col>
+            <ion-col size="3">
+            </ion-col>
+          </ion-row>
+  </ion-card>
+
+</ion-content>

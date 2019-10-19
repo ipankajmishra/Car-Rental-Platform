@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <!--<img style="height: 600px; margin-left: 50px; opacity: 0.8; position: absolute;" src="../../assets/car_remtal.jpg" />-->
+    <ion-card class="myCard">
+        <img src="../../assets/car_remtal.jpg"/>
+        <div class="myOverlay">
+           <p style="font-size: 32px; text-align: center; font-weight: bold; color: aliceblue">Welcome to Car Rental Service</p>
+           <h1 style="font-size: 22px; text-align: center">All types of cars are available and in every budget segment.</h1>
+        </div>
+        
+      </ion-card>
+      <ion-chip style="margin-left: 40%; background-color: rgb(253, 173, 0); font-size: 22px; font-weight: bolder" (click)="navigatetoList()">Check Out Collection</ion-chip>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ heading }} - Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card style="background-color:#d1c1d1; border-radius: 25px">
+        <ion-card style="height: 150px; width: 250px; margin-left: 35%; border-radius: 35px; margin-bottom: 0%; ">
+          <img [src]="item.image" />
+          
+        </ion-card>
+        <br>
+        <ion-chip style="background-color: rgb(0, 0, 0); margin-left: 40%">
+            <p style="background-color: rgb(0, 0, 0); color: aliceblue">Charge : Rs.{{ item.rent_per_day }} /day</p>
+          </ion-chip>
+        
+      </ion-card>
+      <ion-card>
+        <ion-row>
+            <ion-col size="1">
+  
+              </ion-col>
+          <ion-col size="3">
+              <p style="font-size: 18px; font-weight: bold"> Date</p>
+              <h4>{{ date1 }} - {{ month }} - {{ year }}</h4>
+              <h4>{{ date2 }} - {{ month }} - {{ year }}</h4>
+              <h4>{{ date3 }} - {{ month }} - {{ year }}</h4>
+              <h4>{{ date4 }} - {{ month }} - {{ year }}</h4>
+              <h4>{{ date5 }} - {{ month }} - {{ year }}</h4>
+              <h4>{{ date6 }} - {{ month }} - {{ year }}</h4>
+              <h4>{{ date7 }} - {{ month }} - {{ year }}</h4>
+          </ion-col>
+        <ion-col size="2">
+          <p style="font-size: 18px; font-weight: bold"> Availablity</p>
+          <ion-chip *ngIf="!available1" style="background-color: green; color: aliceblue">Available</ion-chip>
+          <ion-chip *ngIf="available1" style="background-color: red; color: aliceblue">Unavailable</ion-chip>
+          <ion-chip *ngIf="!available2" style="background-color: green; color: aliceblue">Available</ion-chip>
+          <ion-chip *ngIf="available2" style="background-color: red; color: aliceblue">Unavailable</ion-chip>
+          <ion-chip *ngIf="!available3" style="background-color: green; color: aliceblue">Available</ion-chip>
+          <ion-chip *ngIf="available3" style="background-color: red; color: aliceblue">Unavailable</ion-chip>
+          <ion-chip *ngIf="!available4" style="background-color: green; color: aliceblue">Available</ion-chip>
+          <ion-chip *ngIf="available4" style="background-color: red; color: aliceblue">Unavailable</ion-chip>
+          <ion-chip *ngIf="!available5" style="background-color: green; color: aliceblue">Available</ion-chip>
+          <ion-chip *ngIf="available5" style="background-color: red; color: aliceblue">Unavailable</ion-chip>
+          <ion-chip *ngIf="available6" style="background-color: red; color: aliceblue">Unavailable</ion-chip>
+          <ion-chip *ngIf="!available6" style="background-color: green; color: aliceblue">Available</ion-chip>
+          <ion-chip *ngIf="available7" style="background-color: red; color: aliceblue">Unavailable</ion-chip>
+          <ion-chip *ngIf="!available7" style="background-color: green; color: aliceblue">Available</ion-chip>
+
+          </ion-col>
+        <ion-col size="2">
+            <p style="font-size: 18px; font-weight: bold">Book Now</p>
+            <ion-chip (click)="bookcontinue1(one)" *ngIf="!available1" style="background-color: royalblue; color: aliceblue">Book Now</ion-chip>
+            <ion-chip *ngIf="available1" style="background-color: rgb(164, 225, 65); color: aliceblue">Not allowed</ion-chip>
+            <ion-chip (click)="bookcontinue2(two)" *ngIf="!available2"style="background-color: royalblue; color: aliceblue">Book Now</ion-chip>
+            <ion-chip *ngIf="available2" style="background-color: rgb(164, 225, 65); color: aliceblue">Not allowed</ion-chip>
+
+            <ion-chip (click)="bookcontinue3(third)" *ngIf="!available3" style="background-color: royalblue; color: aliceblue">Book Now</ion-chip>
+            <ion-chip *ngIf="available3" style="background-color: rgb(164, 225, 65); color: aliceblue">Not allowed</ion-chip>
+
+            <ion-chip (click)="bookcontinue4(four)" *ngIf="!available4" style="background-color: royalblue; color: aliceblue">Book Now</ion-chip>
+            <ion-chip *ngIf="available4" style="background-color: rgb(164, 225, 65); color: aliceblue">Not allowed</ion-chip>
+
+            <ion-chip (click)="bookcontinue5(five)" *ngIf="!available5" style="background-color: royalblue; color: aliceblue">Book Now</ion-chip>
+            <ion-chip *ngIf="available5" style="background-color: rgb(164, 225, 65); color: aliceblue">Not allowed</ion-chip>
+
+            <ion-chip (click)="bookcontinue6(six)" *ngIf="!available6" style="background-color: royalblue; color: aliceblue">Book Now</ion-chip>
+            <ion-chip *ngIf="available6" style="background-color: rgb(164, 225, 65); color: aliceblue">Not allowed</ion-chip>
+
+            <ion-chip (click)="bookcontinue7(seven)" *ngIf="!available7" style="background-color: royalblue; color: aliceblue">Book Now</ion-chip>
+            <ion-chip *ngIf="available7" style="background-color: rgb(164, 225, 65); color: aliceblue">Not allowed</ion-chip>
+
+          </ion-col>
+        
+      
+        </ion-row>
+      </ion-card>
+      
+</ion-content>
